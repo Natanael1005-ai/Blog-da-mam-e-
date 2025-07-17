@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div id="conteudo"></div>
+  <script>
+    fetch('README.md')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('conteudo').innerHTML = marked.parse(text);
+      });
+  </script>
   <meta charset="UTF-8">
   <title>Blog da Profª Darlene</title>
   <style>
